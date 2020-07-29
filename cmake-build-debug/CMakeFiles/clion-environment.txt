@@ -1,0 +1,4 @@
+ToolSet: w64 6.0 (local)@E:\C++\MinGW\mingw64
+Options: 
+
+Options:-DCMAKE_SH=CMAKE_SH-NOTFOUND
