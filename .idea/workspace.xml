@@ -13,10 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="86aba928-4fd9-4c16-82c7-6f57551993e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/HyperRectanglesRTree.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/HyperRectanglesRTree.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/interface.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface.h" beforeDir="false" afterPath="$PROJECT_DIR$/interface.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,14 +66,29 @@
       <workItem from="1596033935266" duration="685000" />
       <workItem from="1596034735331" duration="1519000" />
       <workItem from="1597055369451" duration="2165000" />
-      <workItem from="1597132771015" duration="9593000" />
+      <workItem from="1597132771015" duration="12614000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
+    <state x="-1248" y="163" key="#Notifications" timestamp="1597167559729">
+      <screen x="-1680" y="0" width="1680" height="1010" />
+    </state>
+    <state x="-1248" y="163" key="#Notifications/0.0.1920.1040/-1680.0.1680.1010@-1680.0.1680.1010" timestamp="1597167559729" />
     <state x="184" y="86" key="DiffContextDialog" timestamp="1596035821944">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -111,10 +122,11 @@
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597133977749" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596030158180" />
-    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1597134129100">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1197" y="242" key="Vcs.Push.Dialog.v2" timestamp="1597158408626">
+      <screen x="-1680" y="0" width="1680" height="1010" />
     </state>
     <state x="552" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597134129100" />
+    <state x="-1197" y="242" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1680.0.1680.1010@-1680.0.1680.1010" timestamp="1597158408626" />
     <state x="552" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596035846975" />
     <state x="616" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1597132933918">
       <screen x="0" y="0" width="1920" height="1040" />

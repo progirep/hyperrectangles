@@ -23,6 +23,7 @@ int main(int argv, const char **args) {
     ds.removeCoveredRectangles();
 
     std::cerr << "Computation finished.\n";
+    std::cerr << "We have : " << ds.size() << " hyperrectagngles.\n";
 
 }
 
