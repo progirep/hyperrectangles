@@ -8,7 +8,7 @@ int main(int argv, const char **args) {
 
     DataStructureForHyperRectangles ds(nofDimensions);
 
-    for (unsigned int i=0;i<50000;i++) {
+    for (unsigned int i=0;i<5000000;i++) {
 
         std::vector<double> min;
         std::vector<double> max;

@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/C++/DataStructureForHyperRectangles/interface.cpp
+interface.h
+E:/C++/DataStructureForHyperRectangles/interface.h
+
+E:/C++/DataStructureForHyperRectangles/interface.h
+vector
+-
+cassert
+-
+list
+-
+iostream
+-
+
+E:/C++/DataStructureForHyperRectangles/main.cpp
+interface.h
+E:/C++/DataStructureForHyperRectangles/interface.h
+random
+-
+iostream
+-
+

@@ -49,6 +49,10 @@ public:
     // @param point Should has the same dimension as rectangle.
     bool contain(std::vector<double> &point) const;
 
+    // @brief If the rec1 is at external of the rec2，These two recs has no intersection.
+    // @param hyperrectangle that has the same dimension as the rec1
+    bool isExternal(HyperRectangle& r) const;
+
     // ===================================== Flex Goals ====================================================
     std::vector<double> getAUniformlyRandomPointNotCoveredByAnyRectangleAlready(std::vector<double> spaceMin, std::vector<double> spaceMax) const;
 
@@ -73,6 +77,20 @@ public:
      * @param rectangle The new hyperrectangle
      */
     void addRectangle(const HyperRectangle &rectangle);
+
+    /**
+    * @brief Returns the number of hyper-rectangles contained in this data structure
+    * @return the number of hyper-rectangles.
+    */
+    unsigned int size() {
+        return total.size();
+    }
+
+    /**
+     * @brief check if the hyper-rectangles is covered already. Return true if rectangle is covered, return false if the rectangle is not totally covered.
+     * @param r The rectangle that need to be check.
+     * */
+     bool ifNotCoveredAlredy(const HyperRectangle& r);
 
     /**
      * @brief Adds a new rectangle if it is not already covered by the other rectangles already in the data structure
