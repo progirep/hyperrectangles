@@ -41,7 +41,7 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RunManager">
-    <configuration name="HyperRectanglesRTree" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="HyperRectanglesRTree" TARGET_NAME="HyperRectanglesRTree" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="HyperRectanglesRTree" RUN_TARGET_NAME="HyperRectanglesRTree">
+    <configuration name="HyperRectanglesRTree" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="HyperRectanglesRTree" TARGET_NAME="HyperRectanglesRTree" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="HyperRectanglesRTree" RUN_TARGET_NAME="HyperRectanglesRTree">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>

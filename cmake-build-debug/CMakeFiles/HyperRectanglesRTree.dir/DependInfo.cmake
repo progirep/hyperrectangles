@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "E:/C++/DataStructureForHyperRectangles/interface.cpp" "E:/C++/DataStructureForHyperRectangles/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/interface.cpp.obj"
-  "E:/C++/DataStructureForHyperRectangles/main.cpp" "E:/C++/DataStructureForHyperRectangles/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/main.cpp.obj"
+  "C:/Users/lijialin92/Desktop/hyperrectangles/interface.cpp" "C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/interface.cpp.obj"
+  "C:/Users/lijialin92/Desktop/hyperrectangles/main.cpp" "C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
