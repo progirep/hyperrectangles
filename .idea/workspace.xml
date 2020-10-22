@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="HyperRectanglesRTree" targetName="HyperRectanglesRTree" />
@@ -12,7 +30,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86aba928-4fd9-4c16-82c7-6f57551993e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/RTree.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeRCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/CXX.includecache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/depend.internal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/interface.cpp.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/main.cpp.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/HyperRectanglesRTree.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/HyperRectanglesRTree.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/interface.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface.h" beforeDir="false" afterPath="$PROJECT_DIR$/interface.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,14 +69,21 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lijialin92\Desktop\hyperrectangles" />
+      <recent name="C:\Users\lijialin92\Desktop\hyperrectangles\cmake-build-debug" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="HyperRectanglesRTree" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="HyperRectanglesRTree" TARGET_NAME="HyperRectanglesRTree" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="HyperRectanglesRTree" RUN_TARGET_NAME="HyperRectanglesRTree">
@@ -46,7 +91,13 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -67,11 +118,23 @@
       <workItem from="1596034735331" duration="1519000" />
       <workItem from="1597055369451" duration="2165000" />
       <workItem from="1597132771015" duration="12614000" />
+      <workItem from="1603046007289" duration="773000" />
+      <workItem from="1603110973193" duration="7265000" />
+      <workItem from="1603203077119" duration="7597000" />
+      <workItem from="1603273562408" duration="16438000" />
     </task>
+    <task id="LOCAL-00001" summary="test connect">
+      <created>1603046112697</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603046112697</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -83,6 +146,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test connect" />
+    <option name="LAST_COMMIT_MESSAGE" value="test connect" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1248" y="163" key="#Notifications" timestamp="1597167559729">
@@ -93,28 +161,33 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="86" key="DiffContextDialog/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596035821944" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1595966991239">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1032" y="267" key="FileChooserDialogImpl" timestamp="1603376143830">
+      <screen x="-1680" y="0" width="1680" height="1010" />
     </state>
+    <state x="-1032" y="267" key="FileChooserDialogImpl/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603376143830" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1595966991239" />
-    <state width="1877" height="261" key="GridCell.Tab.0.bottom" timestamp="1597090821860">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1637" height="298" key="GridCell.Tab.0.bottom" timestamp="1603405623357">
+      <screen x="-1680" y="0" width="1680" height="1010" />
     </state>
+    <state width="1637" height="298" key="GridCell.Tab.0.bottom/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603405623357" />
     <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597090821860" />
     <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596031193513" />
-    <state width="1877" height="261" key="GridCell.Tab.0.center" timestamp="1597090821858">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1637" height="298" key="GridCell.Tab.0.center" timestamp="1603405623357">
+      <screen x="-1680" y="0" width="1680" height="1010" />
     </state>
+    <state width="1637" height="298" key="GridCell.Tab.0.center/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603405623357" />
     <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597090821858" />
     <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596031193513" />
-    <state width="1877" height="261" key="GridCell.Tab.0.left" timestamp="1597090821857">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1637" height="298" key="GridCell.Tab.0.left" timestamp="1603405623357">
+      <screen x="-1680" y="0" width="1680" height="1010" />
     </state>
+    <state width="1637" height="298" key="GridCell.Tab.0.left/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603405623357" />
     <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597090821857" />
     <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596031193513" />
-    <state width="1877" height="261" key="GridCell.Tab.0.right" timestamp="1597090821859">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1637" height="298" key="GridCell.Tab.0.right" timestamp="1603405623357">
+      <screen x="-1680" y="0" width="1680" height="1010" />
     </state>
+    <state width="1637" height="298" key="GridCell.Tab.0.right/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603405623357" />
     <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597090821859" />
     <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596031193513" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1597133977749">
@@ -122,9 +195,11 @@
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597133977749" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596030158180" />
-    <state x="-1197" y="242" key="Vcs.Push.Dialog.v2" timestamp="1597158408626">
+    <state x="-1197" y="242" key="Vcs.Push.Dialog.v2" timestamp="1603406005208">
       <screen x="-1680" y="0" width="1680" height="1010" />
     </state>
+    <state x="-1197" y="242" key="Vcs.Push.Dialog.v2/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603406005208" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1680.0.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1603046150833" />
     <state x="552" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597134129100" />
     <state x="-1197" y="242" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1680.0.1680.1010@-1680.0.1680.1010" timestamp="1597158408626" />
     <state x="552" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596035846975" />
@@ -133,9 +208,10 @@
     </state>
     <state x="616" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597132933918" />
     <state x="616" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596034735157" />
-    <state x="188" y="215" width="1066" height="1022" maximized="true" key="dock-window-1" timestamp="1597136779244">
+    <state x="387" y="3" width="1404" height="992" key="dock-window-1" timestamp="1603203734166">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="387" y="3" width="1404" height="992" key="dock-window-1/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603203734166" />
     <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040/-1050.34.1050.1640@-1050.34.1050.1640" timestamp="1597136688276" />
     <state x="188" y="215" width="1066" height="1022" key="dock-window-1/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597136653754" />
     <state x="188" y="215" width="1066" height="1022" maximized="true" key="dock-window-1/0.0.1920.1040/-1680.0.1680.1010@-1680.0.1680.1010" timestamp="1597136779244" />
@@ -148,6 +224,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="647" y="293" key="git4idea.merge.GitPullDialog/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597134283779" />
+    <state x="-1067" y="398" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1603405977549">
+      <screen x="-1680" y="0" width="1680" height="1010" />
+    </state>
+    <state x="-1067" y="398" key="git4idea.remote.GitConfigureRemotesDialog/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603405977549" />
     <state x="-1177" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1597156592440">
       <screen x="-1680" y="0" width="1680" height="1010" />
     </state>

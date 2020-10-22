@@ -9,6 +9,7 @@
 #include <cassert>
 #include <list>
 #include <iostream>
+#include <algorithm>
 
 //******************************************HyperRectangle Class*******************************************************
 // @brief Data Structure for rectangle.
@@ -85,6 +86,15 @@ public:
     unsigned int size() {
         return total.size();
     }
+
+    /**
+     * @brief Cartesian Product, Use recursion to find all possible combination of points.
+     * @param dimvalue the vector that contains all the possible of every dimension.
+     * @param res result vector used to store all the possible combination of points.
+     * @param layer dimensions.
+     * @param tmp temp vector.
+     * */
+     void productImplement(std::vector<std::vector<double>> dimvalue,std::vector<std::vector<double>> &res,int layer,std::vector<double> tmp);
 
     /**
      * @brief check if the hyper-rectangles is covered already. Return true if rectangle is covered, return false if the rectangle is not totally covered.

@@ -1,6 +1,7 @@
 #include "interface.h"
 #include <random>
 #include <iostream>
+#include "RTree.h"
 
 int main(int argv, const char **args) {
 
@@ -8,7 +9,7 @@ int main(int argv, const char **args) {
 
     DataStructureForHyperRectangles ds(nofDimensions);
 
-    for (unsigned int i=0;i<5000000;i++) {
+    for (unsigned int i=0;i<30;i++) {
 
         std::vector<double> min;
         std::vector<double> max;
@@ -26,4 +27,18 @@ int main(int argv, const char **args) {
     std::cerr << "We have : " << ds.size() << " hyperrectagngles.\n";
 
 }
+/*    int nofDimensions = 2;
+    DataStructureForHyperRectangles ds(nofDimensions);
+    std::vector<double> min1{1, 1};
+    std::vector<double> max1{2, 2};
+    ds.addRectangle(HyperRectangle(min1,max1));
+    std::vector<double> min2{1, 1};
+    std::vector<double> max2{3, 3};
+    ds.addRectangle(HyperRectangle(min2,max2));
+    std::vector<double> min3{1, 1};
+    std::vector<double> max3{2, 2};
+
+    std::cout << ds.ifNotCoveredAlredy(HyperRectangle(min3,max3));
+    return 0;
+}*/
 
