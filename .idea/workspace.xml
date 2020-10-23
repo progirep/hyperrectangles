@@ -30,27 +30,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86aba928-4fd9-4c16-82c7-6f57551993e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/RTree.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeRCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CMakeSystem.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/a.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdCXX/a.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/CXX.includecache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/depend.internal" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/interface.cpp.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/main.cpp.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/interface.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/interface.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/main.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/HyperRectanglesRTree.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/HyperRectanglesRTree.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/HyperRectanglesRTree.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/interface.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface.h" beforeDir="false" afterPath="$PROJECT_DIR$/interface.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,28 +151,36 @@
     </state>
     <state x="-1032" y="267" key="FileChooserDialogImpl/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603376143830" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1595966991239" />
-    <state width="1637" height="298" key="GridCell.Tab.0.bottom" timestamp="1603405623357">
-      <screen x="-1680" y="0" width="1680" height="1010" />
+    <state width="1877" height="216" key="GridCell.Tab.0.bottom" timestamp="1603495382571">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1637" height="298" key="GridCell.Tab.0.bottom/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603405623357" />
+    <state width="1007" height="519" key="GridCell.Tab.0.bottom/-1050.0.1050.1640/0.0.1920.1040@-1050.0.1050.1640" timestamp="1603471166936" />
+    <state width="1877" height="216" key="GridCell.Tab.0.bottom/-1050.0.1050.1640/0.0.1920.1040@0.0.1920.1040" timestamp="1603495382571" />
+    <state width="1637" height="298" key="GridCell.Tab.0.bottom/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603470758104" />
     <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597090821860" />
     <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596031193513" />
-    <state width="1637" height="298" key="GridCell.Tab.0.center" timestamp="1603405623357">
-      <screen x="-1680" y="0" width="1680" height="1010" />
+    <state width="1877" height="216" key="GridCell.Tab.0.center" timestamp="1603495382571">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1637" height="298" key="GridCell.Tab.0.center/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603405623357" />
+    <state width="1007" height="519" key="GridCell.Tab.0.center/-1050.0.1050.1640/0.0.1920.1040@-1050.0.1050.1640" timestamp="1603471166936" />
+    <state width="1877" height="216" key="GridCell.Tab.0.center/-1050.0.1050.1640/0.0.1920.1040@0.0.1920.1040" timestamp="1603495382571" />
+    <state width="1637" height="298" key="GridCell.Tab.0.center/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603470758104" />
     <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597090821858" />
     <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596031193513" />
-    <state width="1637" height="298" key="GridCell.Tab.0.left" timestamp="1603405623357">
-      <screen x="-1680" y="0" width="1680" height="1010" />
+    <state width="1877" height="216" key="GridCell.Tab.0.left" timestamp="1603495382571">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1637" height="298" key="GridCell.Tab.0.left/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603405623357" />
+    <state width="1007" height="519" key="GridCell.Tab.0.left/-1050.0.1050.1640/0.0.1920.1040@-1050.0.1050.1640" timestamp="1603471166936" />
+    <state width="1877" height="216" key="GridCell.Tab.0.left/-1050.0.1050.1640/0.0.1920.1040@0.0.1920.1040" timestamp="1603495382571" />
+    <state width="1637" height="298" key="GridCell.Tab.0.left/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603470758104" />
     <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597090821857" />
     <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596031193513" />
-    <state width="1637" height="298" key="GridCell.Tab.0.right" timestamp="1603405623357">
-      <screen x="-1680" y="0" width="1680" height="1010" />
+    <state width="1877" height="216" key="GridCell.Tab.0.right" timestamp="1603495382571">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1637" height="298" key="GridCell.Tab.0.right/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603405623357" />
+    <state width="1007" height="519" key="GridCell.Tab.0.right/-1050.0.1050.1640/0.0.1920.1040@-1050.0.1050.1640" timestamp="1603471166936" />
+    <state width="1877" height="216" key="GridCell.Tab.0.right/-1050.0.1050.1640/0.0.1920.1040@0.0.1920.1040" timestamp="1603495382571" />
+    <state width="1637" height="298" key="GridCell.Tab.0.right/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603470758104" />
     <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597090821859" />
     <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596031193513" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1597133977749">
@@ -195,9 +188,10 @@
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597133977749" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596030158180" />
-    <state x="-1197" y="242" key="Vcs.Push.Dialog.v2" timestamp="1603406005208">
-      <screen x="-1680" y="0" width="1680" height="1010" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1603495435664">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1050.0.1050.1640/0.0.1920.1040@0.0.1920.1040" timestamp="1603495435664" />
     <state x="-1197" y="242" key="Vcs.Push.Dialog.v2/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603406005208" />
     <state x="552" y="249" key="Vcs.Push.Dialog.v2/-1680.0.1680.1010/0.0.1920.1040@0.0.1920.1040" timestamp="1603046150833" />
     <state x="552" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597134129100" />
@@ -208,17 +202,19 @@
     </state>
     <state x="616" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597132933918" />
     <state x="616" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596034735157" />
-    <state x="387" y="3" width="1404" height="992" key="dock-window-1" timestamp="1603203734166">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-986" y="221" width="945" height="1032" key="dock-window-1" timestamp="1603472103851">
+      <screen x="-1050" y="0" width="1050" height="1640" />
     </state>
+    <state x="-986" y="221" width="945" height="1032" key="dock-window-1/-1050.0.1050.1640/0.0.1920.1040@0.0.1920.1040" timestamp="1603472103851" />
     <state x="387" y="3" width="1404" height="992" key="dock-window-1/-1680.0.1680.1010/0.0.1920.1040@-1680.0.1680.1010" timestamp="1603203734166" />
     <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040/-1050.34.1050.1640@-1050.34.1050.1640" timestamp="1597136688276" />
     <state x="188" y="215" width="1066" height="1022" key="dock-window-1/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597136653754" />
     <state x="188" y="215" width="1066" height="1022" maximized="true" key="dock-window-1/0.0.1920.1040/-1680.0.1680.1010@-1680.0.1680.1010" timestamp="1597136779244" />
     <state x="-1680" y="35" width="1696" height="1022" key="dock-window-1/0.0.1920.1040/-1680.35.1680.1010@0.0.1920.1040" timestamp="1596009460149" />
-    <state x="-1050" y="184" width="1066" height="719" key="dock-window-2" timestamp="1597090818524">
-      <screen x="-1050" y="34" width="1050" height="1640" />
+    <state x="-1050" y="0" width="1066" height="734" maximized="true" key="dock-window-2" timestamp="1603472103851">
+      <screen x="-1050" y="0" width="1050" height="1640" />
     </state>
+    <state x="-1050" y="0" width="1066" height="734" maximized="true" key="dock-window-2/-1050.0.1050.1640/0.0.1920.1040@0.0.1920.1040" timestamp="1603472103851" />
     <state x="-1050" y="184" width="1066" height="719" key="dock-window-2/0.0.1920.1040/-1050.34.1050.1640@0.0.1920.1040" timestamp="1597090818524" />
     <state x="647" y="293" key="git4idea.merge.GitPullDialog" timestamp="1597134283779">
       <screen x="0" y="0" width="1920" height="1040" />

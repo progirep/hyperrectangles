@@ -46,11 +46,12 @@ void DataStructureForHyperRectangles::addRectangle(const HyperRectangle &rectang
 }
 
 bool DataStructureForHyperRectangles::ifNotCoveredAlredy(const HyperRectangle &r) {
-//在total中看这个新加入的rec是不是完全被覆盖的
-    //把total中的所有的rectangles都根据xyz...重写出来。
+//to check if the r is totally covered by total?
+    //transfer total to total_trans, store all the values in every dimension. and values in each dimension has been
+    // stored in one vector<double>.
     std::vector<std::vector<double>> total_trans;
     for (int i = 0; i < r.dimension; i++){
-        std::vector<double> total_trans_temp;//临时的vector，储存一个维度中的所有出现的值。
+        std::vector<double> total_trans_temp;//temp vector<double>, to store all the values in one dimension.
         for (auto &it : total){
                 total_trans_temp.push_back(it.min[i]);
                 total_trans_temp.push_back(it.max[i]);
@@ -66,37 +67,43 @@ bool DataStructureForHyperRectangles::ifNotCoveredAlredy(const HyperRectangle &r
         it.erase(std::unique(it.begin(), it.end()), it.end());
     }
 
-    //用笛卡尔积，算出所有的维度的所有可能的组合total_points
+    //Cartesian product to calculate all the possible combination(points)
     std::vector<double> tmp;
-    std::vector<std::vector<double>> res;//res to store the result
+    std::vector<std::vector<double>> res;//res to store the results
     int layer = 0;
     productImplement(total_trans, res, layer, tmp);
 
-
-/*    for(int i = 0; i < total_trans.size(); i++){
-        for(auto & j : total_trans[i])
-            std::cout << j;
+    //输出total_trans
+    for(auto & it : total_trans){
+        for(auto & itt : it){
+            std::cout << itt << ",";
+        }
         std::cout << std::endl;
     }
     std::cout << "*************************************************************";
     std::cout << std::endl;
 
+/*    //输出res
     for(int i = 0; i < res.size(); i++){
         for(auto & j : res[i])
-            std::cout << j;
+            std::cout << j << ",";
         std::cout << std::endl;
     }
     std::cout << "*************************************************************";
-    std::cout << std::endl;
-    //把不在rec中的点，删除掉
+    std::cout << std::endl;*/
+
+
+    //delete the points that not inside of the new rectangle r
     for(auto it = res.begin(); it != res.end();){
-        if(!r.contain(*(it))){
-            it = res.erase(it);
-        }
-        else{
+        if(r.contain(*(it))){
             it++;
         }
+        else{
+            it = res.erase(it);
+        }
     }
+
+/*    //输出在r中的res
     for(int i = 0; i < res.size(); i++){
         for(auto & j : res[i])
             std::cout << j;
@@ -105,8 +112,7 @@ bool DataStructureForHyperRectangles::ifNotCoveredAlredy(const HyperRectangle &r
     std::cout << "*************************************************************";
     std::cout << std::endl;*/
 
-    //res中的所有的点现在都是在rec中的。
-    //如果res中，出现一个点
+    //if there is one point in res is not contained by total, then r is not totally covered by total.
     for(auto & it : res){
         if(!isPointContainedInAnyRectangle(it)){ //如果这个rec的set不是contain这个点。则说明rec中的点有没有被totalcontain。所以rec没有完全被覆盖。
             return true;
