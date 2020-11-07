@@ -129,7 +129,7 @@ public:
     ~Iterator()                                   { }
     
     /// Is iterator invalid
-    bool IsNull()                                 { return (m_tos <= 0); }
+    bool IsNull()             const                    { return (m_tos <= 0); }
 
     /// Is iterator pointing to valid data
     bool IsNotNull()                              { return (m_tos > 0); }
@@ -239,7 +239,7 @@ public:
   };
 
   /// Get 'first' for iteration
-  void GetFirst(Iterator& a_it)
+  void GetFirst(Iterator& a_it) const
   {
     a_it.Init();
     Node* first = m_root;
@@ -262,13 +262,13 @@ public:
   }  
 
   /// Get Next for iteration
-  void GetNext(Iterator& a_it)                    { ++a_it; }
+  void GetNext(Iterator& a_it)  const                  { ++a_it; }
 
   /// Is iterator NULL, or at end?
-  bool IsNull(Iterator& a_it)                     { return a_it.IsNull(); }
+  bool IsNull(Iterator& a_it)        const             { return a_it.IsNull(); }
 
   /// Get object at iterator position
-  DATATYPE& GetAt(Iterator& a_it)                 { return *a_it; }
+  DATATYPE& GetAt(Iterator& a_it)            const      { return *a_it; }
 
 protected:
 

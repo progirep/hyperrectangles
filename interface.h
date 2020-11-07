@@ -14,6 +14,8 @@
 
 const int g_nofDimensions = 4;
 
+const int g_max_num_of_points = 100;
+
 //******************************************HyperRectangle Class*******************************************************
 // @brief Data Structure for rectangle.
 class HyperRectangle {
@@ -45,6 +47,12 @@ public:
         assert(mini.size()==maxi.size());
     }
 
+    HyperRectangle(std::vector<double> &mini, std::vector<double> &maxi) : dimension(mini.size()),
+                                                                                            min(mini), max(maxi), id(0)
+    {
+        assert(mini.size()==maxi.size());
+    }
+
     //**************************************if covered by***************************************************************
     // @brief Check this rectangle is totally covered by the other rectangle or not.
     // @return True if the rectangle has been totally covered by rec2; False if it was not totally covered.
@@ -60,9 +68,6 @@ public:
     // @brief If the rec1 is at external of the rec2，These two recs has no intersection.
     // @param hyper rectangle that has the same dimension as the rec1
     bool isExternal(HyperRectangle& r) const;
-
-    // ===================================== Flex Goals ====================================================
-    std::vector<double> getAUniformlyRandomPointNotCoveredByAnyRectangleAlready(std::vector<double> spaceMin, std::vector<double> spaceMax) const;
 
 };
 
@@ -116,7 +121,8 @@ public:
      * @param layer dimensions.
      * @param tmp temp vector.
      * */
-     void productImplement(std::vector<std::vector<double>> dimvalue,std::vector<std::vector<double>> &res,int layer,std::vector<double> tmp);
+     void productImplement(std::vector<std::vector<double>> dimvalue,std::vector<std::vector<double>> &res,int layer,
+                           std::vector<double> tmp) const;
 
     /**
     * @brief calculate the number of the overlap hyper rectangles, and write the overlapped hyper rectangles into global
@@ -124,13 +130,14 @@ public:
     * @param rec the search hyper rectangle.
     * @return the number of the hyper rectangles in the Rtree that overlap with search hyper rectangle
     * */
-     int overlap_search(const HyperRectangle & rec);
+     int overlap_search(const HyperRectangle & rec) const;
 
     /**
-     * @brief check if the hyper-rectangles is covered already. Return true if rectangle is covered, return false if the rectangle is not totally covered.
+     * @brief check if the hyper-rectangles is covered already.
+     * @return true if rectangle is covered, return false if the rectangle is not totally covered.
      * @param r The rectangle that need to be check.
      * */
-     bool ifNotCoveredAlredy(const HyperRectangle& r);
+     bool ifNotCoveredAlready(const HyperRectangle& r);
 
     /**
      * @brief Adds a new rectangle if it is not already covered by the other rectangles already in the data structure
@@ -169,20 +176,57 @@ public:
 
 
     // ===================================== Flex Goals ====================================================
+    /**
+    * @brief get the uniform random points set according to the hyper rectangle space
+    * @param spaceMin
+    * @param spaceMax
+    * @return
+    */
+    std::vector<std::vector<double>> getUniformlyRandomPoints(std::vector<double>spaceMin, std::vector<double>spaceMax)
+    const;
+
+
+    /**
+     * @brief get a point that not covered by any hyper rectangles within a hyper rectangle space.
+     * @param spaceMin the min set of search hyper rectangle, define the minimum coroner of the hyper rectangle space
+     * @param spaceMax the max set of search hyper rectangle, define the maximum corner of the hyper rectangle space
+     * @return a point with in the given space and is not covered by any rectangle in the data structure
+     */
     std::vector<double> getAUniformlyRandomPointNotCoveredByAnyRectangleAlready(std::vector<double> spaceMin,
                                                                                 std::vector<double> spaceMax) const;
 
 };
 
+
+/**
+ * @brief use to receive the hyper rectangle callback from the  function
+ */
 struct Rect{
     int min[g_nofDimensions], max[g_nofDimensions];
 };
 
+
+/**
+ * the global variable to store all the overlap hyper rectangles that overlap with the new added hyper rectangle.
+ */
 extern std::vector<HyperRectangle> overlapset;
 
+/**
+ * @brief use to call Search(), do not do ant thing, just use as the parameter to Search().
+ * @param id
+ * @param arg
+ * @return always be true.
+ */
 bool MySearchCallback(int id, void* arg);
 
 
+/**
+ * @brief use to write the overlap hyper rectangle to the global variable overlapset.
+ * @param id the id of hyper rectangle
+ * @param arg the lower and upper bound of hyper rectangle
+ * @return always true to keep the Search() continue searching.
+ */
+bool MySearchCallbackWriteToOverlapset(int id, void* arg);
 
 
 #endif //HYPERRECTANGLESRTREE_INTERFACE_H
