@@ -52,7 +52,7 @@ matrix:
       env: CC=clang
       env: LINK=clang++
 script:
-  - g++ -c -pipe -g -Wall -W -fPIC  -I. -o main.o main.cpp
-  - g++ -c -pipe -g -Wall -W -fPIC  -I. -o interface.o interface.cpp
-  - g++ -o tool main.o interface.o  
+  - g++ -std=c++11 -c -pipe -g -Wall -W -fPIC  -I. -o main.o main.cpp
+  - g++ -std=c++11 -c -pipe -g -Wall -W -fPIC  -I. -o interface.o interface.cpp
+  - g++ -std=c++11 -o tool main.o interface.o  
   - ./tool
