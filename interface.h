@@ -10,6 +10,8 @@
 #include <list>
 #include <iostream>
 #include <algorithm>
+#include <stddef.h>
+#include <stdlib.h>
 #include "RTree.h"
 
 const int g_nofDimensions = 4;
@@ -83,7 +85,7 @@ public:
 class DataStructureForHyperRectangles {
 
 public:
-    RTree<int, int, g_nofDimensions, float> tree;
+    RTree<size_t, int, g_nofDimensions, float> tree;
 
 private:
     // .... internal components
@@ -94,7 +96,7 @@ public:
      * @brief Constructor -- Generates a new data structure instance for storing hyper-rectangles
      * @param nofDimensions The number of dimensions of each hyper-rectangle later stored in this data structure. Must be at least 1
      */
-    DataStructureForHyperRectangles(const int _nofDimensions) : nofDimensions(_nofDimensions) {
+    DataStructureForHyperRectangles(const unsigned int _nofDimensions) : nofDimensions(_nofDimensions) {
 
     };
     ~DataStructureForHyperRectangles() {};
@@ -121,7 +123,7 @@ public:
      * @param layer dimensions.
      * @param tmp temp vector.
      * */
-     void productImplement(std::vector<std::vector<double>> dimvalue,std::vector<std::vector<double>> &res,int layer,
+     void productImplement(std::vector<std::vector<double>> dimvalue,std::vector<std::vector<double>> &res,unsigned int layer,
                            std::vector<double> tmp) const;
 
     /**
@@ -217,7 +219,7 @@ extern std::vector<HyperRectangle> overlapset;
  * @param arg
  * @return always be true.
  */
-bool MySearchCallback(int id, void* arg);
+bool MySearchCallback(unsigned int id, void* arg);
 
 
 /**
@@ -226,7 +228,7 @@ bool MySearchCallback(int id, void* arg);
  * @param arg the lower and upper bound of hyper rectangle
  * @return always true to keep the Search() continue searching.
  */
-bool MySearchCallbackWriteToOverlapset(int id, void* arg);
+bool MySearchCallbackWriteToOverlapset(unsigned int id, void* arg);
 
 
 #endif //HYPERRECTANGLESRTREE_INTERFACE_H

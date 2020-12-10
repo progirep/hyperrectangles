@@ -4,6 +4,8 @@
 
 int main(int argv, const char **args) {
 
+    (void)argv;
+    (void)args;
 
     DataStructureForHyperRectangles ds(g_nofDimensions);
 
