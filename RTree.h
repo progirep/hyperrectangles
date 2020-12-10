@@ -1387,6 +1387,7 @@ RTREE_TEMPLATE
 void RTREE_QUAL::Classify(int a_index, int a_group, PartitionVars* a_parVars)
 {
   ASSERT(a_parVars);
+  ASSERT(a_index <= MAXNODES);
   ASSERT(!a_parVars->m_taken[a_index]);
 
   a_parVars->m_partition[a_index] = a_group;
