@@ -8,6 +8,7 @@
 #include <math.h>
 #include <assert.h>
 #include <stdlib.h>
+#include <limits>
 
 #define ASSERT assert // RTree uses ASSERT( condition )
 #ifndef Min
@@ -1353,8 +1354,9 @@ void RTREE_QUAL::InitParVars(PartitionVars* a_parVars, int a_maxRects, int a_min
 RTREE_TEMPLATE
 void RTREE_QUAL::PickSeeds(PartitionVars* a_parVars)
 {
-  int seed0, seed1;
-  ELEMTYPEREAL worst, waste;
+  int seed0  = -666;
+  int seed1  = -666;
+  bool foundACase = false;
   ELEMTYPEREAL area[MAXNODES+1];
 
   for(int index=0; index<a_parVars->m_total; ++index)
@@ -1362,21 +1364,24 @@ void RTREE_QUAL::PickSeeds(PartitionVars* a_parVars)
     area[index] = CalcRectVolume(&a_parVars->m_branchBuf[index].m_rect);
   }
 
-  worst = -a_parVars->m_coverSplitArea - 1;
+  ELEMTYPEREAL worst = -1*std::numeric_limits<double>::infinity(); // -a_parVars->m_coverSplitArea - 1;
   for(int indexA=0; indexA < a_parVars->m_total-1; ++indexA)
   {
     for(int indexB = indexA+1; indexB < a_parVars->m_total; ++indexB)
     {
       Rect oneRect = CombineRect(&a_parVars->m_branchBuf[indexA].m_rect, &a_parVars->m_branchBuf[indexB].m_rect);
-      waste = CalcRectVolume(&oneRect) - area[indexA] - area[indexB];
+      ELEMTYPEREAL waste = CalcRectVolume(&oneRect) - area[indexA] - area[indexB];
+      std::cout << "Waste: " << waste << std::endl;
       if(waste > worst)
       {
         worst = waste;
         seed0 = indexA;
         seed1 = indexB;
+        foundACase = true;
       }
     }
   }
+  assert(foundACase);
   Classify(seed0, 0, a_parVars);
   Classify(seed1, 1, a_parVars);
 }

@@ -85,7 +85,7 @@ public:
 class DataStructureForHyperRectangles {
 
 public:
-    RTree<size_t, int, g_nofDimensions, float> tree;
+    RTree<size_t, int, g_nofDimensions, double> tree;
 
 private:
     // .... internal components

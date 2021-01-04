@@ -266,7 +266,7 @@ void DataStructureForHyperRectangles::removeCoveredRectangles() {
 
     DataStructureForHyperRectangles newds(g_nofDimensions);
 
-    RTree<size_t , int , g_nofDimensions, float >::Iterator it;
+    RTree<size_t , int , g_nofDimensions, double >::Iterator it;
 
     for (tree.GetFirst(it); !tree.IsNull(it); tree.GetNext(it)){
 
@@ -287,7 +287,7 @@ void DataStructureForHyperRectangles::removeCoveredRectangles() {
 
     tree.RemoveAll();//把newds.tree通过迭代器赋值给ds.tree
 
-    RTree<size_t , int , g_nofDimensions, float >::Iterator it_newds;
+    RTree<size_t , int , g_nofDimensions, double >::Iterator it_newds;
 
     for(newds.tree.GetFirst(it_newds); !it_newds.IsNull(); newds.tree.GetNext(it_newds)){
         int arr_min[g_nofDimensions], arr_max[g_nofDimensions];
@@ -302,7 +302,7 @@ void DataStructureForHyperRectangles::removeCoveredRectangles() {
 void DataStructureForHyperRectangles::getListOfAllRectangles(
         std::list<std::pair<std::vector<double>, std::vector<double>>> &listToStoreTo) const {
 
-    RTree<size_t , int , g_nofDimensions, float >::Iterator it;
+    RTree<size_t , int , g_nofDimensions, double >::Iterator it;
     std::pair<std::vector<double>, std::vector<double>> hyperrecranle;
     for (tree.GetFirst(it); !tree.IsNull(it); tree.GetNext(it)) {
 
