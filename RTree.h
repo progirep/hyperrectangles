@@ -8,13 +8,14 @@
 #include <math.h>
 #include <assert.h>
 #include <stdlib.h>
+#include <limits>
 
 #define ASSERT assert // RTree uses ASSERT( condition )
 #ifndef Min
-  #define Min __min 
+  #define Min(a,b) (((a)<(b))?(a):(b))
 #endif //Min
 #ifndef Max
-  #define Max __max 
+  #define Max(a,b) (((a)>(b))?(a):(b))
 #endif //Max
 
 //
@@ -90,7 +91,7 @@ public:
   /// \param a_resultCallback Callback function to return result.  Callback should return 'true' to continue searching
   /// \param a_context User context to pass as parameter to a_resultCallback
   /// \return Returns the number of entries found
-  int Search(const ELEMTYPE a_min[NUMDIMS], const ELEMTYPE a_max[NUMDIMS], bool __cdecl a_resultCallback(DATATYPE a_data, void* a_context), void* a_context) const;
+  int Search(const ELEMTYPE a_min[NUMDIMS], const ELEMTYPE a_max[NUMDIMS], bool (*a_resultCallback)(DATATYPE a_data, void* a_context), void* a_context) const;
   
   /// Remove all entries from tree
   void RemoveAll();
@@ -354,7 +355,7 @@ protected:
   void FreeListNode(ListNode* a_listNode);
   bool Overlap(Rect* a_rectA, Rect* a_rectB) const;
   void ReInsert(Node* a_node, ListNode** a_listNode);
-  bool Search(Node* a_node, Rect* a_rect, int& a_foundCount, bool __cdecl a_resultCallback(DATATYPE a_data, void* a_context), void* a_context) const;
+  bool Search(Node* a_node, Rect* a_rect, int& a_foundCount, bool (*a_resultCallback)(DATATYPE a_data, void* a_context), void* a_context) const;
   void RemoveAllRec(Node* a_node);
   void Reset();
   void CountRec(Node* a_node, int& a_count);
@@ -525,7 +526,7 @@ void RTREE_QUAL::Remove(const ELEMTYPE a_min[NUMDIMS], const ELEMTYPE a_max[NUMD
 
 
 RTREE_TEMPLATE
-int RTREE_QUAL::Search(const ELEMTYPE a_min[NUMDIMS], const ELEMTYPE a_max[NUMDIMS], bool __cdecl a_resultCallback(DATATYPE a_data, void* a_context), void* a_context) const
+int RTREE_QUAL::Search(const ELEMTYPE a_min[NUMDIMS], const ELEMTYPE a_max[NUMDIMS], bool (*a_resultCallback)(DATATYPE a_data, void* a_context), void* a_context) const
 {
 #ifdef _DEBUG
   for(int index=0; index<NUMDIMS; ++index)
@@ -1353,8 +1354,9 @@ void RTREE_QUAL::InitParVars(PartitionVars* a_parVars, int a_maxRects, int a_min
 RTREE_TEMPLATE
 void RTREE_QUAL::PickSeeds(PartitionVars* a_parVars)
 {
-  int seed0, seed1;
-  ELEMTYPEREAL worst, waste;
+  int seed0  = -666;
+  int seed1  = -666;
+  bool foundACase = false;
   ELEMTYPEREAL area[MAXNODES+1];
 
   for(int index=0; index<a_parVars->m_total; ++index)
@@ -1362,21 +1364,24 @@ void RTREE_QUAL::PickSeeds(PartitionVars* a_parVars)
     area[index] = CalcRectVolume(&a_parVars->m_branchBuf[index].m_rect);
   }
 
-  worst = -a_parVars->m_coverSplitArea - 1;
+  ELEMTYPEREAL worst = -1*std::numeric_limits<double>::infinity(); // -a_parVars->m_coverSplitArea - 1;
   for(int indexA=0; indexA < a_parVars->m_total-1; ++indexA)
   {
     for(int indexB = indexA+1; indexB < a_parVars->m_total; ++indexB)
     {
       Rect oneRect = CombineRect(&a_parVars->m_branchBuf[indexA].m_rect, &a_parVars->m_branchBuf[indexB].m_rect);
-      waste = CalcRectVolume(&oneRect) - area[indexA] - area[indexB];
+      ELEMTYPEREAL waste = CalcRectVolume(&oneRect) - area[indexA] - area[indexB];
+      std::cout << "Waste: " << waste << std::endl;
       if(waste > worst)
       {
         worst = waste;
         seed0 = indexA;
         seed1 = indexB;
+        foundACase = true;
       }
     }
   }
+  assert(foundACase);
   Classify(seed0, 0, a_parVars);
   Classify(seed1, 1, a_parVars);
 }
@@ -1387,6 +1392,7 @@ RTREE_TEMPLATE
 void RTREE_QUAL::Classify(int a_index, int a_group, PartitionVars* a_parVars)
 {
   ASSERT(a_parVars);
+  ASSERT(a_index <= MAXNODES);
   ASSERT(!a_parVars->m_taken[a_index]);
 
   a_parVars->m_partition[a_index] = a_group;
@@ -1543,7 +1549,7 @@ void RTREE_QUAL::ReInsert(Node* a_node, ListNode** a_listNode)
 
 // Search in an index tree or subtree for all data retangles that overlap the argument rectangle.
 RTREE_TEMPLATE
-bool RTREE_QUAL::Search(Node* a_node, Rect* a_rect, int& a_foundCount, bool __cdecl a_resultCallback(DATATYPE a_data, void* a_context), void* a_context) const
+bool RTREE_QUAL::Search(Node* a_node, Rect* a_rect, int& a_foundCount, bool (*a_resultCallback)(DATATYPE a_data, void* a_context), void* a_context) const
 {
   ASSERT(a_node);
   ASSERT(a_node->m_level >= 0);
@@ -1571,7 +1577,7 @@ bool RTREE_QUAL::Search(Node* a_node, Rect* a_rect, int& a_foundCount, bool __cd
         DATATYPE& id = a_node->m_branch[index].m_data;
         Rect* rect = &(a_node->m_branch[index].m_rect);
         // NOTE: There are different ways to return results.  Here's where to modify
-        if(&a_resultCallback)
+        if(a_resultCallback)
         {
           ++a_foundCount;
           if(!a_resultCallback(id, rect))

@@ -12,8 +12,9 @@
      * */
 std::vector<HyperRectangle> overlapset;
 
-bool MySearchCallbackWriteToOverlapset(int id, void* arg)
+bool MySearchCallbackWriteToOverlapset(size_t id, void* arg)
 {
+    (void)id;
     std::vector<double> min;
     std::vector<double> max;
     for(int i = 0; i < g_nofDimensions; i++)
@@ -27,9 +28,10 @@ bool MySearchCallbackWriteToOverlapset(int id, void* arg)
     return true; // keep going
 }
 
-bool MySearchCallback(int id, void* arg)
+bool MySearchCallback(size_t id, void* arg)
 {
-
+    (void)id;
+    (void)arg;
     return true; // keep going
 }
 
@@ -38,7 +40,7 @@ bool MySearchCallback(int id, void* arg)
 // The min point of rec1 is not in rec2 OR the max point of rec1 should not be in rec2 OR the min and max point of rec
 // are both not inside rec2. Then rec1 is not totally covered by rec2.
 bool HyperRectangle::coveredBy(HyperRectangle &rec2) const {
-    for(int i = 0; i < dimension; ++i)
+    for(unsigned int i = 0; i < dimension; ++i)
     {
         //min point of rec1 is not covered by rec2
         if(min[i] > rec2.max[i] || min[i] < rec2.min[i])
@@ -53,7 +55,7 @@ bool HyperRectangle::coveredBy(HyperRectangle &rec2) const {
 //***************************************Define contain(std::vector<double>)*************************************
 bool HyperRectangle::contain(std::vector<double> &point) const {
     //Use for loop to check every dimension
-    for(int i = 0; i < dimension; ++i)
+    for(unsigned int i = 0; i < dimension; ++i)
     {
         if(point[i] > this->max[i] || point[i] < this->min[i])
             return false;
@@ -62,7 +64,7 @@ bool HyperRectangle::contain(std::vector<double> &point) const {
 }
 
 bool HyperRectangle::isExternal(HyperRectangle &r) const {
-    for(int i = 0; i < dimension; ++i)
+    for(unsigned int i = 0; i < dimension; ++i)
     {
         if (r.max[i] <= min[i] || r.min[i] >= max[i])
             return true;
@@ -81,7 +83,7 @@ bool HyperRectangle::isExternal(HyperRectangle &r) const {
 //******************************************Define addRectangleIfNotCoveredAlready()*****************************************************
 void DataStructureForHyperRectangles::addRectangle(const HyperRectangle &rectangle){
     int recMin[rectangle.dimension], recMax[rectangle.dimension];
-    for (int i = 0; i < rectangle.dimension; i++)
+    for (unsigned int i = 0; i < rectangle.dimension; i++)
     {
         recMin[i] = rectangle.min[i];
         recMax[i] = rectangle.max[i];
@@ -94,7 +96,7 @@ void DataStructureForHyperRectangles::addRectangle(const HyperRectangle &rectang
 int DataStructureForHyperRectangles::overlap_search(const HyperRectangle &rec) const{
     int search_min[g_nofDimensions];
     int search_max[g_nofDimensions];
-    for(int i = 0; i < rec.dimension; i++){
+    for(unsigned int i = 0; i < rec.dimension; i++){
         search_min[i] = rec.min[i];
         search_max[i] = rec.max[i];
     }
@@ -120,7 +122,7 @@ bool DataStructureForHyperRectangles::ifNotCoveredAlready(const HyperRectangle &
 
     std::vector<std::vector<double>> overlapset_trans;
 
-    for (int i = 0; i < r.dimension; i++){
+    for (unsigned int i = 0; i < r.dimension; i++){
         std::vector<double> overlapset_trans_temp;//temp vector<double>, to store all the values in one dimension.
         for (auto &it : overlapset){
             overlapset_trans_temp.push_back(it.min[i]);
@@ -138,7 +140,7 @@ bool DataStructureForHyperRectangles::ifNotCoveredAlready(const HyperRectangle &
     }
 
     //remove the value in different dimension that not inside of the r
-    for(int i = 0; i < nofDimensions; i++){
+    for(unsigned int i = 0; i < nofDimensions; i++){
         auto it_min = std::find(overlapset_trans[i].begin(),overlapset_trans[i].end(),r.min[i]);//find r.min[i] iterator
         auto it_max = std::find(overlapset_trans[i].begin(),overlapset_trans[i].end(),r.max[i]);//find r.max[i]
         overlapset_trans[i].erase(overlapset_trans[i].begin(), it_min);//delete value smaller than r.min[i]
@@ -217,7 +219,7 @@ bool DataStructureForHyperRectangles::isPointContainedInAnyRectangle(std::vector
 {
     int search_min[nofDimensions];
     int search_max[nofDimensions];
-    for(int i = 0; i < nofDimensions; i++){
+    for(unsigned int i = 0; i < nofDimensions; i++){
         search_min[i] = point[i];
         search_max[i] = point[i];
     }
@@ -234,14 +236,14 @@ bool DataStructureForHyperRectangles::isPointContainedInAnyRectangle(std::vector
 // ****************************************Define productImplement()**************************************
 
 void DataStructureForHyperRectangles::productImplement(std::vector<std::vector<double>> dimvalue,
-                                                       std::vector<std::vector<double>> &res, int layer,
+                                                       std::vector<std::vector<double>> &res, unsigned int layer,
                                                        std::vector<double> tmp) const{
     if (layer < dimvalue.size() - 1){
-        for (int i = 0; i < dimvalue[layer].size(); i++){
+        for (unsigned int i = 0; i < dimvalue[layer].size(); i++){
             std::vector<double> sb;
             sb.clear();
 
-            for (int i = 0; i < tmp.size(); i++){
+            for (unsigned int i = 0; i < tmp.size(); i++){
                 sb.push_back(tmp[i]);
             }
             sb.push_back(dimvalue[layer][i]);
@@ -249,7 +251,7 @@ void DataStructureForHyperRectangles::productImplement(std::vector<std::vector<d
         }
     }
     else if (layer == dimvalue.size()-1){
-        for (int j = 0; j < dimvalue[layer].size();j++){
+        for (unsigned int j = 0; j < dimvalue[layer].size();j++){
             tmp.push_back(dimvalue[layer][j]);
             res.push_back(tmp);
             tmp.pop_back();
@@ -264,7 +266,7 @@ void DataStructureForHyperRectangles::removeCoveredRectangles() {
 
     DataStructureForHyperRectangles newds(g_nofDimensions);
 
-    RTree<int , int , g_nofDimensions, float >::Iterator it;
+    RTree<size_t , int , g_nofDimensions, double >::Iterator it;
 
     for (tree.GetFirst(it); !tree.IsNull(it); tree.GetNext(it)){
 
@@ -285,7 +287,7 @@ void DataStructureForHyperRectangles::removeCoveredRectangles() {
 
     tree.RemoveAll();//把newds.tree通过迭代器赋值给ds.tree
 
-    RTree<int , int , g_nofDimensions, float >::Iterator it_newds;
+    RTree<size_t , int , g_nofDimensions, double >::Iterator it_newds;
 
     for(newds.tree.GetFirst(it_newds); !it_newds.IsNull(); newds.tree.GetNext(it_newds)){
         int arr_min[g_nofDimensions], arr_max[g_nofDimensions];
@@ -300,7 +302,7 @@ void DataStructureForHyperRectangles::removeCoveredRectangles() {
 void DataStructureForHyperRectangles::getListOfAllRectangles(
         std::list<std::pair<std::vector<double>, std::vector<double>>> &listToStoreTo) const {
 
-    RTree<int , int , g_nofDimensions, float >::Iterator it;
+    RTree<size_t , int , g_nofDimensions, double >::Iterator it;
     std::pair<std::vector<double>, std::vector<double>> hyperrecranle;
     for (tree.GetFirst(it); !tree.IsNull(it); tree.GetNext(it)) {
 
@@ -373,7 +375,7 @@ std::vector<double> DataStructureForHyperRectangles::getAUniformlyRandomPointNot
 
         std::vector<std::vector<double>> overlapset_trans;
 
-        for (int i = 0; i < search_rec.dimension; i++) {
+        for (unsigned int i = 0; i < search_rec.dimension; i++) {
             std::vector<double> overlapset_trans_temp;//temp vector<double>, to store all the values in one dimension.
             for (auto &it : overlapset) {
                 overlapset_trans_temp.push_back(it.min[i]);
@@ -389,7 +391,7 @@ std::vector<double> DataStructureForHyperRectangles::getAUniformlyRandomPointNot
             it.erase(std::unique(it.begin(), it.end()), it.end());
         }
 
-        for (int i = 0; i < nofDimensions; i++) {
+        for (unsigned int i = 0; i < nofDimensions; i++) {
             auto it_min = std::find(overlapset_trans[i].begin(), overlapset_trans[i].end(),
                                     search_rec.min[i]);//find r.min[i] iterator
             auto it_max = std::find(overlapset_trans[i].begin(), overlapset_trans[i].end(),
@@ -433,4 +435,7 @@ std::vector<double> DataStructureForHyperRectangles::getAUniformlyRandomPointNot
                 return it;
             }
         }
+
+        // What if this does not work?
+        throw 123;
 }
