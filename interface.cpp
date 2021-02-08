@@ -140,11 +140,11 @@ std::vector<HyperRectangle> DataStructureForHyperRectangles::overlap_search(cons
 
     rtree.query(bgi::intersects(boostSearchBox), std::back_inserter(result));
 
-    std::cout << bg::dsv(boostSearchBox) << "has overlap recs: " << result.size() << std::endl;
-    for(auto i : result)
+    /*std::cout << bg::dsv(boostSearchBox) << "has overlap recs: " << result.size() << std::endl;*/
+    /*for(auto i : result)
     {
         std::cout << bg::dsv(i) << std::endl;
-    }
+    }*/
 
     for(auto i : result)
     {
@@ -189,8 +189,8 @@ bool DataStructureForHyperRectangles::ifNotCoveredAlready(const HyperRectangle &
     //search for overlap hyper rectangles
     std::vector<HyperRectangle> overlapset = overlap_search(r);
 
-    std::cout << std::endl;
-    std::cout << "Overlap(interect) hyper rectangles : " << overlapset.size() << std::endl;
+    /*std::cout << std::endl;
+    std::cout << "Overlap(interect) hyper rectangles : " << overlapset.size() << std::endl;*/
 
     if(overlapset.empty()){return false;}
 
@@ -296,7 +296,7 @@ bool DataStructureForHyperRectangles::addRectangleIfNotCoveredAlready(const Hype
     }
 
     if (ifNotCoveredAlready(r)){
-        std::cout << "(";
+        /*std::cout << "(";
         for(auto i:r.min)
         {
             std::cout << i <<",";
@@ -308,12 +308,12 @@ bool DataStructureForHyperRectangles::addRectangleIfNotCoveredAlready(const Hype
         }
         std::cout << ") ";
 
-        std::cout<< "this rec is totally covered! can not be added!" << std::endl;
+        std::cout<< "this rec is totally covered! can not be added!" << std::endl;*/
         return false;
     }
     else{
         addRectangle(r);
-        std::cout << "(";
+        /*std::cout << "(";
         for(auto i:r.min)
         {
             std::cout << i <<",";
@@ -325,7 +325,7 @@ bool DataStructureForHyperRectangles::addRectangleIfNotCoveredAlready(const Hype
         }
         std::cout << ") ";
 
-        std::cout<< "this rec is not totally covered! added!" << std::endl;
+        std::cout<< "this rec is not totally covered! added!" << std::endl;*/
         return true;
     }
 }
@@ -408,8 +408,8 @@ void DataStructureForHyperRectangles::removeCoveredRectangles() {
     std::vector<HyperRectangle> allRecs;
     for(auto& i : rtree)
     {
-        std::cout << bg::dsv(i) << std::endl;
-        std::cout << std::endl;
+        /*std::cout << bg::dsv(i) << std::endl;
+        std::cout << std::endl;*/
         Point pointMin = i.min_corner();
         Point pointMax = i.max_corner();
 
