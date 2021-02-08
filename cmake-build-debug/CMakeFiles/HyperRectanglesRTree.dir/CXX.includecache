@@ -6,17 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/lijialin990/Desktop/hyperrectangles/RTree.h
-stdio.h
--
-math.h
--
-assert.h
--
-stdlib.h
--
-limits
--
+/Users/lijialin990/Desktop/hyperrectangles/interface.cpp
+interface.h
+/Users/lijialin990/Desktop/hyperrectangles/interface.h
 
 /Users/lijialin990/Desktop/hyperrectangles/interface.h
 boost/geometry.hpp
@@ -45,8 +37,6 @@ stddef.h
 -
 stdlib.h
 -
-RTree.h
-/Users/lijialin990/Desktop/hyperrectangles/RTree.h
 
 /Users/lijialin990/Desktop/hyperrectangles/main.cpp
 random

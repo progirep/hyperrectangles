@@ -17,7 +17,6 @@
 #include <algorithm>
 #include <stddef.h>
 #include <stdlib.h>
-#include "RTree.h"
 
 BOOST_GEOMETRY_REGISTER_BOOST_ARRAY_CS(cs::cartesian)
 BOOST_GEOMETRY_REGISTER_C_ARRAY_CS(cs::cartesian)
