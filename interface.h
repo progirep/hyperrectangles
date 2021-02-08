@@ -4,7 +4,12 @@
 
 #ifndef HYPERRECTANGLESRTREE_INTERFACE_H
 #define HYPERRECTANGLESRTREE_INTERFACE_H
-
+#include <boost/geometry.hpp>
+#include <boost/geometry/geometries/point.hpp>
+#include <boost/geometry/geometries/box.hpp>
+#include <boost/geometry/index/rtree.hpp>
+#include <boost/geometry/geometries/adapted/boost_array.hpp>
+#include <boost/geometry/geometries/adapted/c_array.hpp>
 #include <vector>
 #include <cassert>
 #include <list>
@@ -14,9 +19,21 @@
 #include <stdlib.h>
 #include "RTree.h"
 
+BOOST_GEOMETRY_REGISTER_BOOST_ARRAY_CS(cs::cartesian)
+BOOST_GEOMETRY_REGISTER_C_ARRAY_CS(cs::cartesian)
+
+namespace bg = boost::geometry;
+namespace bgi = boost::geometry::index;
+
 const int g_nofDimensions = 4;
 
 const int g_max_num_of_points = 100;
+
+typedef bg::model::point<double, g_nofDimensions, bg::cs::cartesian> Point;
+typedef bg::model::box<Point> Box;
+/*typedef std::pair<box, unsigned> value;*/
+
+
 
 //******************************************HyperRectangle Class*******************************************************
 // @brief Data Structure for rectangle.
@@ -34,7 +51,6 @@ public:
     unsigned int dimension = 1;
     std::vector<double> min;
     std::vector<double> max;
-    unsigned int id;
 
 
 public:
@@ -43,15 +59,13 @@ public:
     // @param ds: The number of dimensions of the hyper-rectangle.
     // @param mini: The minimum point defining the lower bound of the hyper-rectangle.
     // @param maxi: The maximum point defining the upper bound of the hyper-rectangle.
-    HyperRectangle(std::vector<double> &mini, std::vector<double> &maxi, unsigned int id) : dimension(mini.size()),
-    min(mini), max(maxi), id(id)
-    {
-        assert(mini.size()==maxi.size());
-    }
-
     HyperRectangle(std::vector<double> &mini, std::vector<double> &maxi) : dimension(mini.size()),
-                                                                                            min(mini), max(maxi), id(0)
+    min(mini), max(maxi)
     {
+        for(int i = 0; i < g_nofDimensions; i++)
+        {
+            assert(mini[i] <= maxi[i]);
+        }
         assert(mini.size()==maxi.size());
     }
 
@@ -85,7 +99,7 @@ public:
 class DataStructureForHyperRectangles {
 
 public:
-    RTree<size_t, int, g_nofDimensions, double> tree;
+    bgi::rtree< Box, bgi::quadratic<16> > rtree;;
 
 private:
     // .... internal components
@@ -104,7 +118,6 @@ public:
     /**
      * @brief Adds a new rectangle
      * @param rectangle The new hyperrectangle
-     * 把hyperrectangle添加到rtree中。
      */
     void addRectangle(const HyperRectangle &rectangle);
 
@@ -113,7 +126,7 @@ public:
     * @return the number of hyper-rectangles.
     */
     unsigned int size() {
-        return tree.Count();
+        return rtree.size();
     }
 
     /**
@@ -130,20 +143,20 @@ public:
     * @brief calculate the number of the overlap hyper rectangles, and write the overlapped hyper rectangles into global
     * variable 'overlapset'.
     * @param rec the search hyper rectangle.
-    * @return the number of the hyper rectangles in the Rtree that overlap with search hyper rectangle
+    * @return a vector that store all the  overlap recs with search hyper rectangle
     * */
-     int overlap_search(const HyperRectangle & rec) const;
+     std::vector<HyperRectangle> overlap_search(const HyperRectangle & rec) const;
 
     /**
      * @brief check if the hyper-rectangles is covered already.
-     * @return true if rectangle is covered, return false if the rectangle is not totally covered.
+     * @return true if rectangle is totally covered, return false if the rectangle is not totally covered.
      * @param r The rectangle that need to be check.
      * */
      bool ifNotCoveredAlready(const HyperRectangle& r);
 
     /**
      * @brief Adds a new rectangle if it is not already covered by the other rectangles already in the data structure
-     * @return True if the rectangle has been added, False if it was totally covered by total
+     * @return True if the rectangle is not been totally covered and can be added, False if it was totally covered
      * @param rectangle The new hyperrectangle
      */
      bool addRectangleIfNotCoveredAlready(const HyperRectangle &rectangle);
@@ -160,7 +173,7 @@ public:
      * @return How many rectangles are in the data structure
      */
     unsigned int getNofRectangles() {
-        return tree.Count();
+        return rtree.size();
     };
 
     /**
@@ -174,7 +187,7 @@ public:
      * @brief Stores a copy of all rectangles into the list provided.
      * @param listToStoreTo A reference to a list for putting the rectangles into.
      */
-    void getListOfAllRectangles(std::list<std::pair<std::vector<double>, std::vector<double> > > &listToStoreTo) const;
+    void getListOfAllRectangles(std::list<std::pair<std::vector<double>, std::vector<double> > > &listToStoreTo) ;
 
 
     // ===================================== Flex Goals ====================================================
@@ -199,27 +212,27 @@ public:
 
 };
 
-
-/**
+/*
+*//**
  * @brief use to receive the hyper rectangle callback from the  function
- */
+ *//*
 struct Rect{
     int min[g_nofDimensions], max[g_nofDimensions];
 };
 
 
-/**
+*//**
  * the global variable to store all the overlap hyper rectangles that overlap with the new added hyper rectangle.
- */
+ *//*
 extern std::vector<HyperRectangle> overlapset;
 
-/**
+*//**
  * @brief use to call Search(), do not do ant thing, just use as the parameter to Search().
  * @param id
  * @param arg
  * @return always be true.
- */
-bool MySearchCallback(unsigned int id, void* arg);
+ *//*
+bool MySearchCallback(unsigned int id, void* arg);*/
 
 
 /**
@@ -228,7 +241,7 @@ bool MySearchCallback(unsigned int id, void* arg);
  * @param arg the lower and upper bound of hyper rectangle
  * @return always true to keep the Search() continue searching.
  */
-bool MySearchCallbackWriteToOverlapset(unsigned int id, void* arg);
+/*bool MySearchCallbackWriteToOverlapset(unsigned int id, void* arg);*/
 
 
 #endif //HYPERRECTANGLESRTREE_INTERFACE_H

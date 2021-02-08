@@ -8,88 +8,92 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug"/>
+				<Option working_dir="/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="HyperRectanglesRTree">
-				<Option output="C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/HyperRectanglesRTree.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
-					<Add directory="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
-					<Add directory="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
-					<Add directory="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 HyperRectanglesRTree"/>
-					<CompileFile command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="HyperRectanglesRTree/fast">
-				<Option output="C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/HyperRectanglesRTree.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
-					<Add directory="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
-					<Add directory="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
-					<Add directory="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
-					<Add directory="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 HyperRectanglesRTree/fast"/>
-					<CompileFile command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug"/>
+				<Option working_dir="/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="HyperRectanglesRTree">
+				<Option output="/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/HyperRectanglesRTree" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/gcc@6/6.5.0_6/lib/gcc/6/gcc/x86_64-apple-darwin20.2.0/6.5.0/../../../../../../include/c++/6.5.0"/>
+					<Add directory="/usr/local/Cellar/gcc@6/6.5.0_6/lib/gcc/6/gcc/x86_64-apple-darwin20.2.0/6.5.0/../../../../../../include/c++/6.5.0/x86_64-apple-darwin20.2.0"/>
+					<Add directory="/usr/local/Cellar/gcc@6/6.5.0_6/lib/gcc/6/gcc/x86_64-apple-darwin20.2.0/6.5.0/../../../../../../include/c++/6.5.0/backward"/>
+					<Add directory="/usr/local/Cellar/gcc@6/6.5.0_6/lib/gcc/6/gcc/x86_64-apple-darwin20.2.0/6.5.0/include"/>
+					<Add directory="/usr/local/Cellar/gcc@6/6.5.0_6/lib/gcc/6/gcc/x86_64-apple-darwin20.2.0/6.5.0/include-fixed"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 HyperRectanglesRTree"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="HyperRectanglesRTree/fast">
+				<Option output="/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/HyperRectanglesRTree" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/gcc@6/6.5.0_6/lib/gcc/6/gcc/x86_64-apple-darwin20.2.0/6.5.0/../../../../../../include/c++/6.5.0"/>
+					<Add directory="/usr/local/Cellar/gcc@6/6.5.0_6/lib/gcc/6/gcc/x86_64-apple-darwin20.2.0/6.5.0/../../../../../../include/c++/6.5.0/x86_64-apple-darwin20.2.0"/>
+					<Add directory="/usr/local/Cellar/gcc@6/6.5.0_6/lib/gcc/6/gcc/x86_64-apple-darwin20.2.0/6.5.0/../../../../../../include/c++/6.5.0/backward"/>
+					<Add directory="/usr/local/Cellar/gcc@6/6.5.0_6/lib/gcc/6/gcc/x86_64-apple-darwin20.2.0/6.5.0/include"/>
+					<Add directory="/usr/local/Cellar/gcc@6/6.5.0_6/lib/gcc/6/gcc/x86_64-apple-darwin20.2.0/6.5.0/include-fixed"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 HyperRectanglesRTree/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/lijialin92/Desktop/hyperrectangles/interface.cpp">
+		<Unit filename="/Users/lijialin990/Desktop/hyperrectangles/interface.cpp">
 			<Option target="HyperRectanglesRTree"/>
 		</Unit>
-		<Unit filename="C:/Users/lijialin92/Desktop/hyperrectangles/interface.h">
+		<Unit filename="/Users/lijialin990/Desktop/hyperrectangles/interface.h">
 			<Option target="HyperRectanglesRTree"/>
 		</Unit>
-		<Unit filename="C:/Users/lijialin92/Desktop/hyperrectangles/main.cpp">
+		<Unit filename="/Users/lijialin990/Desktop/hyperrectangles/main.cpp">
 			<Option target="HyperRectanglesRTree"/>
 		</Unit>
-		<Unit filename="C:/Users/lijialin92/Desktop/hyperrectangles/CMakeLists.txt">
+		<Unit filename="/Users/lijialin990/Desktop/hyperrectangles/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

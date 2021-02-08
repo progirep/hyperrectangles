@@ -1354,9 +1354,9 @@ void RTREE_QUAL::InitParVars(PartitionVars* a_parVars, int a_maxRects, int a_min
 RTREE_TEMPLATE
 void RTREE_QUAL::PickSeeds(PartitionVars* a_parVars)
 {
-  int seed0  = -666;
-  int seed1  = -666;
-  bool foundACase = false;
+  int seed0=-666;
+  int seed1=-666;
+  //bool foundACase = false;
   ELEMTYPEREAL area[MAXNODES+1];
 
   for(int index=0; index<a_parVars->m_total; ++index)
@@ -1364,7 +1364,7 @@ void RTREE_QUAL::PickSeeds(PartitionVars* a_parVars)
     area[index] = CalcRectVolume(&a_parVars->m_branchBuf[index].m_rect);
   }
 
-  ELEMTYPEREAL worst = -1*std::numeric_limits<double>::infinity(); // -a_parVars->m_coverSplitArea - 1;
+  ELEMTYPEREAL worst = -a_parVars->m_coverSplitArea - 1;
   for(int indexA=0; indexA < a_parVars->m_total-1; ++indexA)
   {
     for(int indexB = indexA+1; indexB < a_parVars->m_total; ++indexB)
@@ -1372,16 +1372,17 @@ void RTREE_QUAL::PickSeeds(PartitionVars* a_parVars)
       Rect oneRect = CombineRect(&a_parVars->m_branchBuf[indexA].m_rect, &a_parVars->m_branchBuf[indexB].m_rect);
       ELEMTYPEREAL waste = CalcRectVolume(&oneRect) - area[indexA] - area[indexB];
       std::cout << "Waste: " << waste << std::endl;
+      std::cout << "worst: " << worst << std::endl;
       if(waste > worst)
       {
         worst = waste;
         seed0 = indexA;
         seed1 = indexB;
-        foundACase = true;
+        //foundACase = true;
       }
     }
   }
-  assert(foundACase);
+  //assert(foundACase);
   Classify(seed0, 0, a_parVars);
   Classify(seed1, 1, a_parVars);
 }

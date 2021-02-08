@@ -1,4 +1,4 @@
-"D:\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_SH=CMAKE_SH-NOTFOUND -G "CodeBlocks - MinGW Makefiles" C:\Users\lijialin92\Desktop\hyperrectangles
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/local/Cellar/gcc@6/6.5.0_6/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/local/Cellar/gcc@6/6.5.0_6/bin/g++-6 -DCMAKE_SH=CMAKE_SH-NOTFOUND -G "CodeBlocks - Unix Makefiles" /Users/lijialin990/Desktop/hyperrectangles
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/lijialin92/Desktop/hyperrectangles/cmake-build-debug
+-- Build files have been written to: /Users/lijialin990/Desktop/hyperrectangles/cmake-build-debug

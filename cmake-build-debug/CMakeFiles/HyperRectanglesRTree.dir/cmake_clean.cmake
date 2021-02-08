@@ -1,10 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/HyperRectanglesRTree.dir/interface.cpp.obj"
-  "CMakeFiles/HyperRectanglesRTree.dir/main.cpp.obj"
-  "HyperRectanglesRTree.exe"
-  "HyperRectanglesRTree.exe.manifest"
+  "CMakeFiles/HyperRectanglesRTree.dir/interface.cpp.o"
+  "CMakeFiles/HyperRectanglesRTree.dir/main.cpp.o"
+  "HyperRectanglesRTree"
   "HyperRectanglesRTree.pdb"
-  "libHyperRectanglesRTree.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
