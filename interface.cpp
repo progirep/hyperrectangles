@@ -146,7 +146,7 @@ std::vector<HyperRectangle> DataStructureForHyperRectangles::overlap_search(cons
         std::cout << bg::dsv(i) << std::endl;
     }*/
 
-    for(auto i : result)
+    for(auto& i : result)
     {
         //i is the box
         //trans box min corner and max corner to point
