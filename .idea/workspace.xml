@@ -29,7 +29,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86aba928-4fd9-4c16-82c7-6f57551993e8" name="Default Changelist" comment="add comments" />
+    <list default="true" id="86aba928-4fd9-4c16-82c7-6f57551993e8" name="Default Changelist" comment="delete RTree.h">
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +129,7 @@
       <workItem from="1612535328401" duration="8851000" />
       <workItem from="1612712166631" duration="2477000" />
       <workItem from="1612715005174" duration="15352000" />
-      <workItem from="1612814415153" duration="2316000" />
+      <workItem from="1612814415153" duration="2998000" />
     </task>
     <task id="LOCAL-00001" summary="test connect">
       <created>1603046112697</created>
@@ -164,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612817937038</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="delete RTree.h">
+      <created>1612819996624</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1612819996624</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +197,7 @@
     <MESSAGE value="implement Rtree" />
     <MESSAGE value="using boost rtree, and test compile with g++6.5.0_6" />
     <MESSAGE value="add comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="add comments" />
+    <MESSAGE value="delete RTree.h" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete RTree.h" />
   </component>
 </project>

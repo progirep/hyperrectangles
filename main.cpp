@@ -89,10 +89,10 @@ void test4()
     }
 
     std::cout << "before remove the covered rectangles, we have: " << ds.size() << std::endl;
-    for(auto i:ds.rtree)
+    /*for(auto i:ds.rtree)
     {
         std::cout << bg::dsv(i) << std::endl;
-    }
+    }*/
     ds.removeCoveredRectangles();
 
     std::cout << "Computation finished.\n";
