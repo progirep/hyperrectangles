@@ -204,7 +204,9 @@ public:
      * @brief get a point that not covered by any hyper rectangles within a hyper rectangle space.
      * @param spaceMin the min set of search hyper rectangle, define the minimum coroner of the hyper rectangle space
      * @param spaceMax the max set of search hyper rectangle, define the maximum corner of the hyper rectangle space
-     * @return a point with in the given space and is not covered by any rectangle in the data structure
+     * @return a point with in the given space and is not covered by any rectangle in the data structure. if the return
+     * vector is spaceMax(the max corner) + 1, then indicate that this input hyper rec is totally covered by the recs in
+     * the data structure.
      */
     std::vector<double> getAUniformlyRandomPointNotCoveredByAnyRectangleAlready(std::vector<double> spaceMin,
                                                                                 std::vector<double> spaceMax) const;

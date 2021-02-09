@@ -45,7 +45,7 @@ void test2()
         ds.addRectangleIfNotCoveredAlready(HyperRectangle(min,max));
     }
 
-    std::cout << "we have: " << ds.size()  << "in our Rtree" << std::endl;
+    std::cout << "we have: " << ds.size()  << " in the data structure." << std::endl;
 
 }
 
@@ -53,7 +53,7 @@ void test2()
 void test3()
 {
     DataStructureForHyperRectangles ds(g_nofDimensions);
-    for (int i = 100; i >= 0; i--) {
+    for (int i = 1000; i >= 0; i--) {
 
         std::vector<double> min;
         std::vector<double> max;
@@ -103,7 +103,7 @@ void test4()
 void test5()
 {
     DataStructureForHyperRectangles ds(g_nofDimensions);
-    for (int i = 10; i >= 0; i--) {
+    for (int i = 20; i >= 0; i--) {
 
         std::vector<double> min;
         std::vector<double> max;
@@ -123,7 +123,7 @@ void test5()
 
 int main(int argv, const char **args) {
 
-    test5();
+    test2();
 
     return 0;
 

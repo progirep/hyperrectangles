@@ -467,7 +467,7 @@ std::vector<std::vector<double>> DataStructureForHyperRectangles::getUniformlyRa
     std::vector<std::vector<double>> uniformRandomPoints;
 
     double root = 1.0 / (double) g_nofDimensions;
-    double n = pow((double) g_max_num_of_points, root);
+    int n = pow(g_max_num_of_points, root);
 
     for(int i = 0; i < g_nofDimensions; i++)
     {
@@ -475,11 +475,9 @@ std::vector<std::vector<double>> DataStructureForHyperRectangles::getUniformlyRa
 
         std::vector<double> dimension_temp{spaceMin[i]};
 
-        if(n > longth){n = longth;}
+        double ceil = longth / (n-1);
 
-        double ceil = longth / n;
-
-        for(int j = 0; j < n-1; j++)
+        for(int j = 0; j < n-2; j++)
         {
             dimension_temp.push_back(dimension_temp.back()+ceil);
         }
@@ -502,77 +500,79 @@ std::vector<std::vector<double>> DataStructureForHyperRectangles::getUniformlyRa
 std::vector<double> DataStructureForHyperRectangles::getAUniformlyRandomPointNotCoveredByAnyRectangleAlready(
         std::vector<double> spaceMin, std::vector<double> spaceMax) const {
 
-        HyperRectangle search_rec(spaceMin, spaceMax);
-        std::vector<HyperRectangle> overlapset = overlap_search(search_rec);
-        if(overlapset.empty()){return spaceMin;}
+    HyperRectangle search_rec(spaceMin, spaceMax);
+    std::vector<HyperRectangle> overlapset = overlap_search(search_rec);
+    if(overlapset.empty()){return spaceMin;}
 
-        std::vector<std::vector<double>> overlapset_trans;
+    std::vector<std::vector<double>> overlapset_trans;
 
-        for (unsigned int i = 0; i < g_nofDimensions; i++) {
-            std::vector<double> overlapset_trans_temp;//temp vector<double>, to store all the values in one dimension.
-            for (auto &it : overlapset) {
-                overlapset_trans_temp.push_back(it.min[i]);
-                overlapset_trans_temp.push_back(it.max[i]);
-            }
-            overlapset_trans.push_back(overlapset_trans_temp);
-            overlapset_trans[i].push_back(search_rec.min[i]);
-            overlapset_trans[i].push_back(search_rec.max[i]);
+    for (unsigned int i = 0; i < g_nofDimensions; i++) {
+        std::vector<double> overlapset_trans_temp;//temp vector<double>, to store all the values in one dimension.
+        for (auto &it : overlapset) {
+            overlapset_trans_temp.push_back(it.min[i]);
+            overlapset_trans_temp.push_back(it.max[i]);
         }
+        overlapset_trans.push_back(overlapset_trans_temp);
+        overlapset_trans[i].push_back(search_rec.min[i]);
+        overlapset_trans[i].push_back(search_rec.max[i]);
+    }
 
-        for (auto &it : overlapset_trans) {
-            std::sort(it.begin(), it.end());
-            it.erase(std::unique(it.begin(), it.end()), it.end());
-        }
+    for (auto &it : overlapset_trans) {
+        std::sort(it.begin(), it.end());
+        it.erase(std::unique(it.begin(), it.end()), it.end());
+    }
 
-        for (unsigned int i = 0; i < g_nofDimensions; i++) {
-            auto it_min = std::find(overlapset_trans[i].begin(), overlapset_trans[i].end(),
-                                    search_rec.min[i]);//find r.min[i] iterator
-            auto it_max = std::find(overlapset_trans[i].begin(), overlapset_trans[i].end(),
-                                    search_rec.max[i]);//find r.max[i]
-            overlapset_trans[i].erase(overlapset_trans[i].begin(), it_min);//delete value smaller than r.min[i]
-            overlapset_trans[i].erase(it_max, overlapset_trans[i].end());//delete value larger than r.max[i]
-        }
+    for (unsigned int i = 0; i < g_nofDimensions; i++) {
+        auto it_min = std::find(overlapset_trans[i].begin(), overlapset_trans[i].end(), search_rec.min[i]);//find r.min[i] iterator
+        auto it_max = std::find(overlapset_trans[i].begin(), overlapset_trans[i].end(), search_rec.max[i]);//find r.max[i]
+        overlapset_trans[i].erase(overlapset_trans[i].begin(), it_min);//delete value smaller than r.min[i]
+        overlapset_trans[i].erase(it_max + 1, overlapset_trans[i].end());//delete value larger than r.max[i]
+    }
 
-        unsigned long long res_num_max = 1;
-        for (int i = 0; i < g_nofDimensions; i++) {
+    unsigned long long res_num_max = 1;
+    for (int i = 0; i < g_nofDimensions; i++) {
 
-            res_num_max = overlapset_trans[i].size() * res_num_max;
+        res_num_max = overlapset_trans[i].size() * res_num_max;
+        if (res_num_max > g_max_num_of_points)
+            break;
+    }
 
-            if (res_num_max > g_max_num_of_points) {//generate 1000000 uniform random points in search hyper rectangle and check
-                std::vector<std::vector<double>> uniform_random_points;
+    if (res_num_max > g_max_num_of_points) {//generate 'g_max_num_of_points' uniform random points in search hyper rectangle and check
+        std::vector<std::vector<double>> uniform_random_points;
 
-                uniform_random_points = getUniformlyRandomPoints(spaceMin, spaceMax);
+        uniform_random_points = getUniformlyRandomPoints(spaceMin, spaceMax);
 
-                for(auto& it : uniform_random_points)
-                {
-                    if(!isPointContainedInAnyRectangle(it))
-                    {
-                        return it;
-                    }
-                }
-            }
-        }
-
-        //Cartesian product to calculate all the possible combination(points)
-        std::vector<double> tmp;
-        std::vector<std::vector<double>> res;//res to store the results
-        int layer = 0;
-        productImplement(overlapset_trans, res, layer, tmp);
-        /*std::cout << "Cartesian product results points: " << res.size() << std::endl;*/
-
-
-        //if there is one point in res is not contained by rtree, then r is not totally covered by this set of hyper recs.
-        for(auto & it : res){
+        for(auto& it : uniform_random_points)
+        {
             if(!isPointContainedInAnyRectangle(it))
             {
                 return it;
             }
         }
+        throw "The input Space is totally covered by the conbination of the hyper rectangles in the data structure!";
+    }
 
-        // What if this does not work?
-        throw 123;
+
+    //Cartesian product to calculate all the possible combination(points)
+    std::vector<double> tmp;
+    std::vector<std::vector<double>> res;//res to store the results
+    int layer = 0;
+    productImplement(overlapset_trans, res, layer, tmp);
+    /*std::cout << "Cartesian product results points: " << res.size() << std::endl;*/
+
+
+    //if there is one point in res is not contained by rtree, then r is not totally covered by this set of hyper recs.
+    for(auto & it : res){
+        if(!isPointContainedInAnyRectangle(it))
+        {
+            return it;
+        }
+    }
+    throw "The input Space is totally covered by the conbination of the hyper rectangles in the data structure!";
 }
 
+
+//***********************************************define getListOfAllRectangles()****************************************
 void DataStructureForHyperRectangles::getListOfAllRectangles(std::list < std::pair < std::vector < double > ,
                                                              std::vector < double>>>& listToStoreTo) {
 
