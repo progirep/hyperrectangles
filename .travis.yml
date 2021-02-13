@@ -1,58 +1,26 @@
 language: cpp
 matrix:
   include:
-    - compiler: gcc-5
+    - compiler: gcc
       os: linux
       sudo: required
-      dist: trusty
+      dist: focal
       addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
-          packages:
-            - g++-5
-            - libboost-all-dev
-      env: CXX=g++-5
-      env: CC=gcc-5
-      env: GCCPATH=/usr/bin/gcc-5
-      env: GPPPATH=/usr/bin/g++-5
-    - compiler: gcc-6
-      os: linux
-      sudo: required
-      dist: trusty
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - g++-6 
-            - libboost-all-dev
-      env: CXX=g++-6
-      env: CC=gcc-6
-      env: GCCPATH=/usr/bin/gcc-6
-      env: GPPPATH=/usr/bin/g++-6
-    - compiler: clang-3.7
-      os: linux
-      sudo: required
-      dist: trusty    
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-trusty-3.7
-          packages:
-            - clang-3.7
-            - libboost-all-dev
-      env: CXX=clang++-3.7
-      env: CC=clang++-3.7
-      env: LINK=clang++-3.7
+      before_install:
+        - sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
+        - sudo apt-get update -qq
+        - sudo apt-get install -y software-properties-common
+        - sudo apt-get install -qq build-essential curl g++ 
     - compiler: clang
       os: osx
       env: CXX=clang++
       env: CC=clang
       env: LINK=clang++
 script:
-  - g++ -std=c++11 -c -pipe -g -Wall -W -fPIC  -I. -o main.o main.cpp
-  - g++ -std=c++11 -c -pipe -g -Wall -W -fPIC  -I. -o interface.o interface.cpp
-  - g++ -std=c++11 -o tool main.o interface.o  
+  - g++ -std=c++14 -c -pipe -g -Wall -W -fPIC  -I. -o main.o main.cpp
+  - g++ -std=c++14 -c -pipe -g -Wall -W -fPIC  -I. -o interface.o interface.cpp
+  - g++ -std=c++14 -o tool main.o interface.o  
   - ./tool
