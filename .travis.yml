@@ -13,7 +13,7 @@ matrix:
         - sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
         - sudo apt-get update -qq
         - sudo apt-get install -y software-properties-common
-        - sudo apt-get install -qq build-essential curl g++ 
+        - sudo apt-get install -qq build-essential curl g++ libboost1.67-dev
     - compiler: clang
       os: osx
       env: CXX=clang++
